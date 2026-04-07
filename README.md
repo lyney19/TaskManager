@@ -24,10 +24,6 @@ The application uses JavaFX bindings and observable collections:
 |-----------------------------------------------|-------------------------------------------------|-----------------------------------------------|
 | <img src="screenshots/main.png" width="250"/> | <img src="screenshots/filter.png" width="250"/> | <img src="screenshots/sort.png" width="250"/> |
 
-## 🛠 Tech Stack
-- Java
-- JavaFX
-
 ## ⚙️ Installation & Run
 1. Clone repository:
 ```bash
@@ -36,26 +32,34 @@ git clone https://github.com/lyney19/TaskManager.git
 2. Open in IDE (IntelliJ IDEA, Eclipse)
 3. Run `Main.java`
 
+## 🛠 Tech Stack
+- Java
+- JavaFX
+
 ## 📁 Project Structure
 ```
 TaskManager/
-├─ Main.java            # UI & logic
-└─ Operation.java       # ViewModel & Model
+├─ src/
+│  └─ main/
+│     ├─ java/
+│     │   ├─ Main.java            # Entry point
+│     │   ├─ MainController.java  # Main window controller
+│     │   └─ TaskProperty.java    # View model & Model
+│     └─ resources/
+│        ├─ main.fxml             # Main window FXML
+│        └─ theme.css             # Main CSS theme
 ```
 
 ## 🧠 What I Learned
 - JavaFX bindings
 - JavaFX collections
 - Basics of the declarative approach to programming
+- FXML and CSS basics
 
 ## 🔮 Future Improvements
 ### Core
 - [ ] Save/load tasks (JSON or database)
 - [ ] Search bar
 
-### UI/UX
-- [ ] Better application design
-
 ### Architecture
 - [ ] Refactor to MVVM
-- [ ] Introduce FXML
