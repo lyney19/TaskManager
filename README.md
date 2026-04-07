@@ -8,15 +8,18 @@ Simple Task manager with a graphical interface written in Java using JavaFX. Thi
 - Sort task list
 - Filter task list by categories and completion status
 - Remove task or change completion status by clicking RMB
+- Save task list in file
+- Load task list from file
 
 ## ⚙️ How It Works
 
-The application uses JavaFX bindings and observable collections:
+The application uses JavaFX bindings and NIO:
 
 - `ObservableList` stores tasks
 - `FilteredList` applies filtering
 - `SortedList` applies sorting
 - UI updates automatically via bindings
+- NIO provides opportunity to work with files
 
 ## 📸 Screenshots
 
@@ -44,7 +47,11 @@ TaskManager/
 │     ├─ java/
 │     │   ├─ Main.java            # Entry point
 │     │   ├─ MainController.java  # Main window controller
-│     │   └─ TaskProperty.java    # View model & Model
+│     │   ├─ SortedMode.java      # Enum of sorting modes
+│     │   ├─ TaskProperty.java    # ViewModel data class
+│     │   ├─ TaskViewModel.java   # ViewModel
+│     │   ├─ Task.java            # Model data class
+│     │   └─ TaskService.java     # Model service
 │     └─ resources/
 │        ├─ main.fxml             # Main window FXML
 │        └─ theme.css             # Main CSS theme
@@ -55,11 +62,19 @@ TaskManager/
 - JavaFX collections
 - Basics of the declarative approach to programming
 - FXML and CSS basics
+- Basics of the MVVM architecture
 
 ## 🔮 Future Improvements
-### Core
-- [ ] Save/load tasks (JSON or database)
-- [ ] Search bar
+### 🧠 Architecture
+- [ ] Refactor `TaskViewModel` into smaller view models (e.g. `TaskListViewModel`, `FilterViewModel`)
+- [ ] Introduce Dependency Injection instead of `TaskService`
+- [ ] Refactor `initialize()` in controller
 
-### Architecture
-- [ ] Refactor to MVVM
+### 💾 Persistence
+- [ ] Replace file-based storage with database (e.g. SQLite)
+- [ ] Add export/import (JSON / CSV)
+
+### 📦 Features
+- [ ] Add UID for every task
+- [ ] Add search functionality
+- [ ] Improve filtering tasks

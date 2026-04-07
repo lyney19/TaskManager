@@ -6,9 +6,9 @@ import javafx.beans.property.StringProperty;
 import java.util.Objects;
 
 public class TaskProperty {
-    private final StringProperty title = new SimpleStringProperty();
-    private final StringProperty category = new SimpleStringProperty();
-    private final BooleanProperty completed = new SimpleBooleanProperty();
+    private final StringProperty title = new SimpleStringProperty("");
+    private final StringProperty category = new SimpleStringProperty("");
+    private final BooleanProperty completed = new SimpleBooleanProperty(false);
 
     public TaskProperty() {}
 
@@ -40,6 +40,14 @@ public class TaskProperty {
 
     public boolean completed() {
         return completed.get();
+    }
+
+    public Task toTask() {
+        return new Task(title.get(), category.get(), completed.get());
+    }
+
+    public void changeCompletionStatus() {
+        completed.set(!completed.get());
     }
 
     @Override

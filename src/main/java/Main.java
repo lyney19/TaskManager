@@ -11,11 +11,17 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        var taskViewModel = new TaskViewModel(new TaskService());
 
         var loader = new FXMLLoader(getClass().getResource("main.fxml"));
+        loader.setControllerFactory(param -> new MainController(taskViewModel));
 
-        final var scene = new Scene(loader.load(), 1050, 560);
+        var scene = new Scene(loader.load(), 1050, 560);
         scene.getStylesheets().add(getClass().getResource("theme.css").toExternalForm());
+
+        stage.setOnCloseRequest(_ -> {
+            taskViewModel.onSaveAllTasks();
+        });
 
         stage.setScene(scene);
         stage.setTitle("Task Manager");

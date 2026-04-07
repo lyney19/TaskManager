@@ -26,11 +26,18 @@
     </left>
 
     <center>
-        <VBox styleClass="card">
-            <TextField fx:id="titleField" promptText="Input task title"/>
-            <TextField fx:id="categoryField" promptText="Input task category"/>
-            <CheckBox fx:id="completedCheckBox" text="Add task as completed"/>
-            <Button text="Add new task" styleClass="primary-button" onAction="#addTask"/>
+        <VBox styleClass="container">
+            <VBox styleClass="card">
+                <TextField fx:id="titleField" promptText="Input task title"/>
+                <TextField fx:id="categoryField" promptText="Input task category"/>
+                <CheckBox fx:id="completedCheckBox" text="Add task as completed"/>
+                <Button text="Add new task" styleClass="primary-button" onAction="#onAddTask"/>
+            </VBox>
+
+            <VBox styleClass="card">
+                <Button text="Save all tasks to file" onAction="#onSaveAllTasks"/>
+                <Button text="Load all tasks from file" onAction="#onLoadAllTasks"/>
+            </VBox>
         </VBox>
     </center>
 
