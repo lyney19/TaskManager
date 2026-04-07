@@ -12,9 +12,9 @@ public final class TaskService {
         List<String> lines = tasks.stream()
                 .map(task -> String.format(
                         "%s;%s;%b",
-                        task.getTitle(),
-                        task.getCategory(),
-                        task.isCompleted()
+                        task.title(),
+                        task.category(),
+                        task.completed()
                 ))
                 .toList();
 
