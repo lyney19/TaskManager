@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="MainController"
+            styleClass="container">
+
+    <left>
+        <VBox styleClass="container">
+            <HBox styleClass="card">
+                <ComboBox fx:id="filterComboBox" promptText="Filter by"/>
+                <ComboBox fx:id="sortedComboBox" promptText="Sort by"/>
+
+                <VBox styleClass="card">
+                    <CheckBox fx:id="useFilterCheckBox" text="Use filter?"/>
+                    <CheckBox fx:id="showCompletedCheckBox" selected="true" text="Show completed?"/>
+                    <CheckBox fx:id="showUncompletedCheckBox" selected="true" text="Show uncompleted?"/>
+                </VBox>
+            </HBox>
+
+            <ListView fx:id="taskView"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="container">
+            <VBox styleClass="card">
+                <TextField fx:id="titleField" promptText="Input task title"/>
+                <TextField fx:id="categoryField" promptText="Input task category"/>
+                <CheckBox fx:id="completedCheckBox" text="Add task as completed"/>
+                <Button text="Add new task" styleClass="primary-button" onAction="#onAddTask"/>
+            </VBox>
+
+            <VBox styleClass="card">
+                <Button text="Save all tasks to file" onAction="#onSaveAllTasks"/>
+                <Button text="Load all tasks from file" onAction="#onLoadAllTasks"/>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

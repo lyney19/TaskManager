@@ -33,7 +33,10 @@ The application uses JavaFX bindings and NIO:
 git clone https://github.com/lyney19/TaskManager.git
 ```
 2. Open in IDE (IntelliJ IDEA, Eclipse)
-3. Run `Main.java`
+3. Run application
+```bash
+mvn clean javafx:run
+```
 
 ## 🛠 Tech Stack
 - Java

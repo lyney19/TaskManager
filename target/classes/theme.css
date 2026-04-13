@@ -1,0 +1,286 @@
+.root {
+    /* Palette */
+    -color-primary: #1e90ff;
+    -color-primary-hover: #2979ff;
+    -color-primary-pressed: #1f5fd1;
+
+    -color-bg: #f5f6f8;
+    -color-surface: #ffffff;
+    -color-border: #dcdfe3;
+
+    -color-text: #1f2328;
+    -color-text-muted: #6b7280;
+
+    /* Global */
+    -fx-font-size: 13.5px;
+    -fx-font-family: "Segoe UI", "Roboto", sans-serif;
+    -fx-background-color: -color-bg;
+}
+
+/* Containers */
+
+.container {
+    -fx-padding: 16px;
+    -fx-spacing: 8px;
+    -fx-background-color: transparent;
+}
+
+.card {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 6px;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 6px;
+    -fx-padding: 16px;
+    -fx-spacing: 8px;
+}
+
+/* Layouts */
+
+.vbox {
+    -fx-spacing: 8px;
+}
+
+.hbox {
+    -fx-spacing: 8px;
+}
+
+/* Buttons */
+
+.button {
+    -fx-background-color: -color-surface;
+    -fx-text-fill: -color-text;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+}
+
+.button:hover {
+    -fx-background-color: #eef1f5;
+}
+
+.button:pressed {
+    -fx-background-color: #e2e6ea;
+}
+
+.button:focused {
+    -fx-border-color: -color-primary;
+}
+
+/* Primary Button */
+
+.primary-button {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+}
+
+.primary-button:hover {
+    -fx-background-color: -color-primary-hover;
+}
+
+.primary-button:pressed {
+    -fx-background-color: -color-primary-pressed;
+}
+
+.primary-button:focused {
+    -fx-effect: dropshadow(gaussian, rgba(41,121,255,0.3), 4, 0, 0, 0);
+}
+
+/* TextField */
+
+.text-field,
+.input-field {
+    -fx-background-color: -color-surface;
+    -fx-text-fill: -color-text;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px;
+}
+
+.text-field:hover,
+.input-field:hover {
+    -fx-border-color: #c5c9cf;
+}
+
+.text-field:focused,
+.input-field:focused {
+    -fx-border-color: -color-primary;
+}
+
+/* CheckBox */
+
+.check-box {
+    -fx-text-fill: -color-text;
+}
+
+.check-box .box {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: -color-primary;
+}
+
+.check-box:hover .box {
+    -fx-border-color: -color-primary;
+}
+
+/* ListView */
+
+.list-view {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-font-size: 15px;
+}
+
+.list-cell {
+    -fx-padding: 8px;
+    -fx-text-fill: -color-text;
+}
+
+.list-cell:hover {
+    -fx-background-color: #eef1f5;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+}
+
+/* DialogPane */
+
+.dialog-pane {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 16px;
+}
+
+.dialog-pane .header-panel {
+    -fx-padding: 0 0 8px 0;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: -color-text;
+    -fx-font-size: 14px;
+}
+
+.dialog-pane .content.label {
+    -fx-text-fill: -color-text;
+}
+
+.dialog-pane .button-bar {
+    -fx-padding: 8px 0 0 0;
+}
+
+/* ContextMenu */
+
+.context-menu {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 0;
+}
+
+.menu-item {
+    -fx-padding: 8px 16px;
+    -fx-background-color: transparent;
+}
+
+.menu-item .label {
+    -fx-text-fill: -color-text;
+}
+
+.menu-item:hover {
+    -fx-background-color: #eef1f5;
+}
+
+.menu-item:focused {
+    -fx-background-color: #e2e6ea;
+}
+
+.menu-item:pressed {
+    -fx-background-color: -color-primary;
+}
+
+.menu-item:pressed .label {
+    -fx-text-fill: white;
+}
+
+.separator:horizontal .line {
+    -fx-border-color: -color-border;
+}
+
+/* ComboBox */
+
+.combo-box {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 0;
+}
+
+.combo-box:hover {
+    -fx-border-color: #c5c9cf;
+}
+
+.combo-box:focused {
+    -fx-border-color: -color-primary;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0 6px 6px 0;
+}
+
+.combo-box .arrow {
+    -fx-background-color: -color-text-muted;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 8px;
+    -fx-text-fill: -color-text;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+.combo-box-popup .list-cell {
+    -fx-padding: 8px;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #eef1f5;
+}
+
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+}
+
+#filterComboBox {
+    -fx-pref-width: 200px;
+}
+
+/* Focus ring */
+
+:focused {
+    -fx-focus-color: -color-primary;
+    -fx-faint-focus-color: transparent;
+}
